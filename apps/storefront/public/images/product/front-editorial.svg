@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7F5F0" />
+      <stop offset="100%" stop-color="#ECE8DF" />
+    </linearGradient>
+    <linearGradient id="fabricShade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FCFAF5" />
+      <stop offset="60%" stop-color="#F4EFE6" />
+      <stop offset="100%" stop-color="#EBE3D5" />
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="25" stdDeviation="35" flood-color="#000000" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <!-- Studio Background -->
+  <rect width="1000" height="1200" fill="url(#bgGrad)" />
+
+  <!-- Subtle Studio Grid -->
+  <line x1="100" y1="0" x2="100" y2="1200" stroke="#E2DCD1" stroke-width="0.5" stroke-dasharray="4 8" opacity="0.6" />
+  <line x1="900" y1="0" x2="900" y2="1200" stroke="#E2DCD1" stroke-width="0.5" stroke-dasharray="4 8" opacity="0.6" />
+  <line x1="0" y1="200" x2="1000" y2="200" stroke="#E2DCD1" stroke-width="0.5" stroke-dasharray="4 8" opacity="0.6" />
+  <line x1="0" y1="1000" x2="1000" y2="1000" stroke="#E2DCD1" stroke-width="0.5" stroke-dasharray="4 8" opacity="0.6" />
+
+  <!-- Technical Overlay Labels -->
+  <text x="80" y="80" font-family="-apple-system, Inter, sans-serif" font-size="12" font-weight="700" letter-spacing="0.25em" fill="#8C887E">STONCROPS</text>
+  <text x="920" y="80" text-anchor="end" font-family="-apple-system, Inter, sans-serif" font-size="12" font-weight="600" letter-spacing="0.2em" fill="#8C887E">EMBROIDERED EDITION</text>
+
+  <!-- Garment Silhouette (Oversized Boxy Drop-Shoulder Tee) -->
+  <g filter="url(#softShadow)">
+    <!-- Base Body & Sleeves -->
+    <path d="M 370 200 
+             C 410 230 590 230 630 200 
+             L 860 320 
+             L 800 660 
+             L 730 630 
+             L 720 980 
+             L 280 980 
+             L 270 630 
+             L 200 660 
+             L 140 320 
+             Z" 
+          fill="url(#fabricShade)" 
+          stroke="#D8CFBF" 
+          stroke-width="1.5" />
+
+    <!-- Ribbed Collar -->
+    <path d="M 370 200 C 420 250 580 250 630 200 C 585 220 415 220 370 200 Z" fill="#EAE2D3" stroke="#C9BEAC" stroke-width="1.5" />
+    <path d="M 378 206 C 425 242 575 242 622 206" fill="none" stroke="#B8AC98" stroke-width="1" stroke-dasharray="2 2" />
+
+    <!-- Drop Shoulder Seams -->
+    <line x1="330" y1="250" x2="300" y2="420" stroke="#D1C6B4" stroke-width="1.5" stroke-dasharray="3 3" />
+    <line x1="670" y1="250" x2="700" y2="420" stroke="#D1C6B4" stroke-width="1.5" stroke-dasharray="3 3" />
+
+    <!-- Left Sleeve Floral Embroidery (Burgundy) -->
+    <g transform="translate(170, 360)">
+      <!-- Floral vine paths -->
+      <path d="M 20 40 Q 50 100 25 160 T 40 240" fill="none" stroke="#722F37" stroke-width="3" stroke-linecap="round" />
+      <!-- Floral Petals / Leaves -->
+      <circle cx="35" cy="80" r="12" fill="#722F37" />
+      <circle cx="22" cy="70" r="10" fill="#581825" />
+      <circle cx="48" cy="75" r="9" fill="#8C3742" />
+      <circle cx="35" cy="80" r="4" fill="#EAE2D3" />
+
+      <circle cx="28" cy="140" r="14" fill="#722F37" />
+      <circle cx="16" cy="132" r="10" fill="#581825" />
+      <circle cx="40" cy="135" r="11" fill="#8C3742" />
+      <circle cx="28" cy="140" r="4" fill="#EAE2D3" />
+
+      <circle cx="36" cy="200" r="11" fill="#722F37" />
+      <circle cx="25" cy="195" r="9" fill="#581825" />
+      <circle cx="45" cy="198" r="8" fill="#8C3742" />
+      
+      <!-- Leaf flourishes -->
+      <path d="M 28 105 Q 10 115 15 125 C 22 120 26 115 28 105 Z" fill="#581825" />
+      <path d="M 33 165 Q 52 172 48 185 C 40 180 35 174 33 165 Z" fill="#581825" />
+    </g>
+
+    <!-- Right Sleeve Floral Embroidery (Burgundy) -->
+    <g transform="translate(770, 360)">
+      <!-- Floral vine paths -->
+      <path d="M 40 40 Q 10 100 35 160 T 20 240" fill="none" stroke="#722F37" stroke-width="3" stroke-linecap="round" />
+      <!-- Floral Petals / Leaves -->
+      <circle cx="25" cy="80" r="12" fill="#722F37" />
+      <circle cx="38" cy="70" r="10" fill="#581825" />
+      <circle cx="12" cy="75" r="9" fill="#8C3742" />
+      <circle cx="25" cy="80" r="4" fill="#EAE2D3" />
+
+      <circle cx="32" cy="140" r="14" fill="#722F37" />
+      <circle cx="44" cy="132" r="10" fill="#581825" />
+      <circle cx="20" cy="135" r="11" fill="#8C3742" />
+      <circle cx="32" cy="140" r="4" fill="#EAE2D3" />
+
+      <circle cx="24" cy="200" r="11" fill="#722F37" />
+      <circle cx="35" cy="195" r="9" fill="#581825" />
+      <circle cx="15" cy="198" r="8" fill="#8C3742" />
+
+      <path d="M 32 105 Q 50 115 45 125 C 38 120 34 115 32 105 Z" fill="#581825" />
+      <path d="M 27 165 Q 8 172 12 185 C 20 180 25 174 27 165 Z" fill="#581825" />
+    </g>
+
+    <!-- STONCROPS Chest Typography Wordmark -->
+    <text x="500" y="380" 
+          text-anchor="middle" 
+          font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Manrope', sans-serif" 
+          font-size="24" 
+          font-weight="800" 
+          letter-spacing="0.32em" 
+          fill="#1C1B19">STONCROPS</text>
+    <text x="500" y="405" 
+          text-anchor="middle" 
+          font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Manrope', sans-serif" 
+          font-size="10" 
+          font-weight="600" 
+          letter-spacing="0.25em" 
+          fill="#8A8275">OVERSIZED SILHOUETTE</text>
+
+    <!-- Garment Fold Shadows -->
+    <path d="M 320 620 Q 380 750 360 980" fill="none" stroke="#E2D9C8" stroke-width="2" opacity="0.6" />
+    <path d="M 680 620 Q 620 750 640 980" fill="none" stroke="#E2D9C8" stroke-width="2" opacity="0.6" />
+    <path d="M 500 480 Q 480 680 500 980" fill="none" stroke="#E4DBCB" stroke-width="2" opacity="0.4" />
+
+    <!-- Hem stitching -->
+    <line x1="282" y1="965" x2="718" y2="965" stroke="#CFC4B1" stroke-width="1.5" stroke-dasharray="4 4" />
+    <line x1="282" y1="969" x2="718" y2="969" stroke="#CFC4B1" stroke-width="1.5" stroke-dasharray="4 4" />
+  </g>
+
+  <!-- Editorial Specs Stamp -->
+  <g transform="translate(80, 1080)">
+    <text x="0" y="0" font-family="-apple-system, Inter, sans-serif" font-size="12" font-weight="700" letter-spacing="0.15em" fill="#1C1B19">SILHOUETTE: BOXY DROP-SHOULDER</text>
+    <text x="0" y="20" font-family="-apple-system, Inter, sans-serif" font-size="11" font-weight="500" fill="#736E64">FABRIC: HEAVYWEIGHT LOOPNET // COLOR: OFF-WHITE</text>
+    <text x="0" y="38" font-family="-apple-system, Inter, sans-serif" font-size="11" font-weight="600" fill="#722F37">EMBROIDERY: BURGUNDY SLEEVE FLORAL ACCENTS</text>
+  </g>
+
+  <g transform="translate(920, 1080)">
+    <text x="0" y="0" text-anchor="end" font-family="-apple-system, Inter, sans-serif" font-size="22" font-weight="800" fill="#1C1B19">₹1,199</text>
+    <text x="0" y="20" text-anchor="end" font-family="-apple-system, Inter, sans-serif" font-size="11" font-weight="600" letter-spacing="0.1em" fill="#722F37">FREE SHIPPING ACROSS INDIA</text>
+  </g>
+</svg>

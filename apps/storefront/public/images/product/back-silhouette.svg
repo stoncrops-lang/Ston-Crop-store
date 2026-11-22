@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7F5F0" />
+      <stop offset="100%" stop-color="#ECE8DF" />
+    </linearGradient>
+    <linearGradient id="fabricShadeBack" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FCFAF5" />
+      <stop offset="60%" stop-color="#F4EFE6" />
+      <stop offset="100%" stop-color="#EBE3D5" />
+    </linearGradient>
+    <filter id="softShadow2" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="25" stdDeviation="35" flood-color="#000000" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <rect width="1000" height="1200" fill="url(#bgGrad2)" />
+
+  <text x="80" y="80" font-family="-apple-system, Inter, sans-serif" font-size="12" font-weight="700" letter-spacing="0.25em" fill="#8C887E">BACK PERSPECTIVE // BOXY DRAPE</text>
+  <text x="920" y="80" text-anchor="end" font-family="-apple-system, Inter, sans-serif" font-size="12" font-weight="600" letter-spacing="0.2em" fill="#8C887E">DROP-SHOULDER CONSTRUCTION</text>
+
+  <!-- Garment Back Silhouette -->
+  <g filter="url(#softShadow2)">
+    <path d="M 380 200 
+             C 430 205 570 205 620 200 
+             L 860 320 
+             L 800 660 
+             L 730 630 
+             L 720 980 
+             L 280 980 
+             L 270 630 
+             L 200 660 
+             L 140 320 
+             Z" 
+          fill="url(#fabricShadeBack)" 
+          stroke="#D8CFBF" 
+          stroke-width="1.5" />
+
+    <!-- Back Collar Seam -->
+    <path d="M 380 200 C 430 215 570 215 620 200" fill="none" stroke="#C9BEAC" stroke-width="2.5" />
+    <path d="M 385 208 C 435 220 565 220 615 208" fill="none" stroke="#B8AC98" stroke-width="1" stroke-dasharray="3 3" />
+
+    <!-- Subtle Minimal Neck Back Tab (STONCROPS) -->
+    <rect x="475" y="235" width="50" height="18" fill="#1C1B19" rx="2" />
+    <text x="500" y="248" text-anchor="middle" font-family="-apple-system, Inter, sans-serif" font-size="7" font-weight="800" letter-spacing="0.2em" fill="#FCFAF5">SC</text>
+
+    <!-- Drop Shoulder Back Seams -->
+    <line x1="330" y1="240" x2="300" y2="420" stroke="#D1C6B4" stroke-width="1.5" stroke-dasharray="3 3" />
+    <line x1="670" y1="240" x2="700" y2="420" stroke="#D1C6B4" stroke-width="1.5" stroke-dasharray="3 3" />
+
+    <!-- Back Drape Lines -->
+    <path d="M 310 520 Q 340 760 330 980" fill="none" stroke="#E2D9C8" stroke-width="2" opacity="0.7" />
+    <path d="M 690 520 Q 660 760 670 980" fill="none" stroke="#E2D9C8" stroke-width="2" opacity="0.7" />
+    <path d="M 500 350 Q 520 650 500 980" fill="none" stroke="#E4DBCB" stroke-width="2" opacity="0.5" />
+
+    <!-- Hem stitching -->
+    <line x1="282" y1="965" x2="718" y2="965" stroke="#CFC4B1" stroke-width="1.5" stroke-dasharray="4 4" />
+    <line x1="282" y1="969" x2="718" y2="969" stroke="#CFC4B1" stroke-width="1.5" stroke-dasharray="4 4" />
+  </g>
+
+  <g transform="translate(80, 1100)">
+    <text x="0" y="0" font-family="-apple-system, Inter, sans-serif" font-size="14" font-weight="700" letter-spacing="0.1em" fill="#1C1B19">STRUCTURE: RELAXED OVERSIZED FIT</text>
+    <text x="0" y="24" font-family="-apple-system, Inter, sans-serif" font-size="12" font-weight="500" fill="#736E64">DESIGNED TO MAINTAIN ITS CLEAN BOXY SILHOUETTE IN ANY POSTURE</text>
+  </g>
+</svg>

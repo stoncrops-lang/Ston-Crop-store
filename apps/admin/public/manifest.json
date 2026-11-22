@@ -1,0 +1,16 @@
+{
+  "name": "STONCROPS Management Dashboard",
+  "short_name": "STONCROPS Admin",
+  "description": "Administrative console for STONCROPS single-product e-commerce platform",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0D0D0F",
+  "theme_color": "#722F37",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

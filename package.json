@@ -1,0 +1,18 @@
+{
+  "name": "stoncrops-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "STONCROPS — Premium Single-Product Fashion E-commerce Platform",
+  "scripts": {
+    "dev:store": "pnpm --filter @stoncrops/storefront dev",
+    "dev:admin": "pnpm --filter @stoncrops/admin dev",
+    "build:types": "pnpm --filter @stoncrops/types build",
+    "build:shared": "pnpm --filter @stoncrops/shared build",
+    "build:store": "pnpm --filter @stoncrops/storefront build",
+    "build:admin": "pnpm --filter @stoncrops/admin build",
+    "build": "pnpm build:types && pnpm build:shared && pnpm build:store && pnpm build:admin"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}
