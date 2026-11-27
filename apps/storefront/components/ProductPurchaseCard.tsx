@@ -70,7 +70,10 @@ export function ProductPurchaseCard() {
           Embroidered Edition
         </h2>
         <p className="text-xs text-obsidian-600 mt-0.5 leading-normal">
-          Full-sleeve oversized T-shirt • Off-white Loopnet • Burgundy floral embroidery
+          Full-sleeve oversized T-shirt • Loopnet fabric • Floral sleeve embroidery
+        </p>
+        <p className="text-[11px] text-obsidian-500 mt-1">
+          Available in: <span className="font-semibold text-obsidian-700">Off-White</span> &amp; <span className="font-semibold text-obsidian-700">Black</span>
         </p>
       </div>
 

@@ -86,12 +86,12 @@ export const HOW_TO_MEASURE_GUIDE = [
 
 export const PRODUCT_SPECIFICATIONS = [
   { label: 'Product', value: 'Full-sleeve oversized T-shirt' },
-  { label: 'Material', value: 'Loopnet' },
-  { label: 'Base Colour', value: 'Off-white / Cream' },
+  { label: 'Material', value: 'Premium Loopnet' },
+  { label: 'Colourways', value: 'Off-White / Cream  •  Jet Black' },
   { label: 'Fit Profile', value: 'Relaxed oversized fit' },
   { label: 'Silhouette', value: 'Boxy drop-shoulder' },
-  { label: 'Sleeve Embroidery', value: 'Burgundy floral embroidery on both sleeves' },
-  { label: 'Chest Branding', value: 'STONCROPS' },
+  { label: 'Sleeve Embroidery', value: 'Floral embroidery on both sleeves' },
+  { label: 'Chest Branding', value: 'STONCROPS (embroidered)' },
   { label: 'Edition', value: 'Embroidered Edition' },
   { label: 'Pricing', value: '₹1,199 (All Taxes Included)' },
   { label: 'Shipping', value: 'FREE across India' },

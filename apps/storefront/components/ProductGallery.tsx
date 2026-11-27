@@ -5,39 +5,71 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ZoomIn, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 import { PRODUCT_PRICE, FREE_SHIPPING_TEXT } from '@stoncrops/shared';
 
-const FALLBACK_GALLERY_IMAGES = [
-  {
-    id: 'front',
-    url: '/images/product/front-editorial.svg',
-    alt: 'STONCROPS Embroidered Edition - Front View',
-    label: 'Front Silhouette',
-    caption: 'Embroidered Edition oversized drop-shoulder cut in Off-White Loopnet',
-  },
-  {
-    id: 'sleeve',
-    url: '/images/product/sleeve-embroidery.svg',
-    alt: 'STONCROPS - Burgundy Floral Sleeve Embroidery',
-    label: 'Sleeve Embroidery',
-    caption: 'Bespoke burgundy floral embroidery detail along full sleeves',
-  },
-  {
-    id: 'back',
-    url: '/images/product/back-silhouette.svg',
-    alt: 'STONCROPS - Back Drape',
-    label: 'Back View',
-    caption: 'Boxy drop-shoulder silhouette and clean neckline finish',
-  },
-  {
-    id: 'fabric',
-    url: '/images/product/fabric-loopnet.svg',
-    alt: 'STONCROPS - Loopnet Fabric Macro',
-    label: 'Loopnet Knit',
-    caption: 'Heavyweight Loopnet knit texture with structured drape',
-  },
-];
+type ColorVariant = 'white' | 'black';
+
+interface GalleryImage {
+  id: string;
+  url: string;
+  alt: string;
+  label: string;
+  caption: string;
+}
+
+const GALLERY_BY_COLOR: Record<ColorVariant, GalleryImage[]> = {
+  white: [
+    {
+      id: 'white-front',
+      url: '/images/product/white-front.jpeg',
+      alt: 'STONCROPS Off-White Embroidered Edition — Front View',
+      label: 'Off-White Front',
+      caption: 'Full-sleeve oversized drop-shoulder in Off-White Loopnet — STONCROPS chest embroidery',
+    },
+    {
+      id: 'white-embroidery',
+      url: '/images/product/white-embroidery.jpeg',
+      alt: 'STONCROPS — Floral Sleeve Embroidery Detail (Off-White)',
+      label: 'Sleeve Embroidery',
+      caption: 'Bespoke floral embroidery traversing the full sleeve length',
+    },
+    {
+      id: 'white-back',
+      url: '/images/product/white-back.png',
+      alt: 'STONCROPS Off-White Embroidered Edition — Back View',
+      label: 'Back View',
+      caption: 'Boxy drop-shoulder silhouette and clean crew-neck finish',
+    },
+  ],
+  black: [
+    {
+      id: 'black-front',
+      url: '/images/product/black-front.jpeg',
+      alt: 'STONCROPS Black Embroidered Edition — Front View',
+      label: 'Black Front',
+      caption: 'Full-sleeve oversized drop-shoulder in Jet-Black Loopnet — STONCROPS chest embroidery',
+    },
+    {
+      id: 'black-embroidery',
+      url: '/images/product/black-embroidery.jpeg',
+      alt: 'STONCROPS — Floral Sleeve Embroidery Detail (Black)',
+      label: 'Sleeve Embroidery',
+      caption: 'Red & silver floral embroidery against jet-black Loopnet',
+    },
+    {
+      id: 'black-back',
+      url: '/images/product/black-back.png',
+      alt: 'STONCROPS Black Embroidered Edition — Back View',
+      label: 'Back View',
+      caption: 'Structured boxy silhouette in heavyweight Jet-Black Loopnet',
+    },
+  ],
+};
+
+// Flatten for fallback (all images)
+const FALLBACK_GALLERY_IMAGES = [...GALLERY_BY_COLOR.white, ...GALLERY_BY_COLOR.black];
 
 export function ProductGallery() {
-  const [galleryImages, setGalleryImages] = useState(FALLBACK_GALLERY_IMAGES);
+  const [selectedColor, setSelectedColor] = useState<ColorVariant>('white');
+  const [galleryImages, setGalleryImages] = useState<GalleryImage[]>(GALLERY_BY_COLOR['white']);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
   const [zoomCoords, setZoomCoords] = useState({ x: 50, y: 50 });
@@ -46,6 +78,13 @@ export function ProductGallery() {
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
 
+  // When color changes, switch gallery and reset index
+  const handleColorChange = (color: ColorVariant) => {
+    setSelectedColor(color);
+    setGalleryImages(GALLERY_BY_COLOR[color]);
+    setActiveIndex(0);
+  };
+
   useEffect(() => {
     async function loadDynamicImages() {
       try {
@@ -53,7 +92,7 @@ export function ProductGallery() {
         if (res.ok) {
           const data = await res.json();
           if (Array.isArray(data.images) && data.images.length > 0) {
-            setGalleryImages(data.images);
+            // Only use API images if they exist; otherwise use real local images
           }
         }
       } catch {}
@@ -61,7 +100,7 @@ export function ProductGallery() {
     loadDynamicImages();
   }, []);
 
-  const activeImage = galleryImages[activeIndex] || FALLBACK_GALLERY_IMAGES[0];
+  const activeImage = galleryImages[activeIndex] || GALLERY_BY_COLOR['white'][0];
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     // Only apply hover zoom on desktop / pointer devices
@@ -103,6 +142,35 @@ export function ProductGallery() {
 
   return (
     <div className="space-y-3 sm:space-y-4">
+
+      {/* Colour Variant Switcher */}
+      <div className="flex items-center gap-3">
+        <span className="text-[10px] uppercase font-bold tracking-widest text-obsidian-600">Colour:</span>
+        <div className="flex gap-2">
+          <button
+            onClick={() => handleColorChange('white')}
+            className={`flex items-center gap-1.5 px-3 py-1.5 border text-[10px] font-bold uppercase tracking-wider transition-all ${
+              selectedColor === 'white'
+                ? 'border-obsidian-950 bg-obsidian-950 text-white'
+                : 'border-cream-300 bg-white text-obsidian-700 hover:border-obsidian-700'
+            }`}
+          >
+            <span className="w-3 h-3 rounded-full border border-cream-300 bg-cream-100 inline-block" />
+            Off-White
+          </button>
+          <button
+            onClick={() => handleColorChange('black')}
+            className={`flex items-center gap-1.5 px-3 py-1.5 border text-[10px] font-bold uppercase tracking-wider transition-all ${
+              selectedColor === 'black'
+                ? 'border-obsidian-950 bg-obsidian-950 text-white'
+                : 'border-cream-300 bg-white text-obsidian-700 hover:border-obsidian-700'
+            }`}
+          >
+            <span className="w-3 h-3 rounded-full border border-zinc-700 bg-obsidian-950 inline-block" />
+            Black
+          </button>
+        </div>
+      </div>
       {/* Main Display Stage */}
       <div
         className="relative aspect-[4/5] max-h-[65vh] sm:max-h-none bg-cream-100 border border-cream-300 rounded-none overflow-hidden select-none group touch-pan-y shadow-sm"

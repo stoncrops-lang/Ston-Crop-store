@@ -72,7 +72,7 @@ export function ProductDetailsAccordion() {
           onToggle={() => toggleSection('desc')}
         >
           <p>
-            STONCROPS introduces our flagship oversized full-sleeve silhouette in this Embroidered Edition. Cut from premium off-white / cream Loopnet fabric, the piece is defined by bespoke burgundy floral embroidery traversing both sleeves and finished with clean STONCROPS chest typography.
+            STONCROPS introduces our flagship oversized full-sleeve silhouette — the Embroidered Edition. Available in two colourways: <strong>Off-White / Cream</strong> and <strong>Jet Black</strong>. Both are cut from premium Loopnet fabric and feature bespoke floral embroidery traversing both sleeves, finished with embroidered STONCROPS chest typography.
           </p>
           <p>
             Engineered with a boxy drop-shoulder cut, the garment creates a relaxed, structured drape suitable for year-round styling.
